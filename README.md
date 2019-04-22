@@ -10,6 +10,6 @@ Working List of Components
 /////
 -Form
 -Modal
--Carousel
+-Carousel(Work in Progress!)
 -Express app boilerplate that can be VERY easily hosted
 -Gallery
