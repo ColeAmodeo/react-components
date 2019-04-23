@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import './style.scss'
-// Data for carousel
-const carouselSlidesData = []
-
 
 // Carousel wrapper component
 class Carousel extends Component {
   constructor(props) {
     super(props);
 
-    this.goToSlide = this.goToSlide.bind(this);
-    this.goToPrevSlide = this.goToPrevSlide.bind(this);
-    this.goToNextSlide = this.goToNextSlide.bind(this);
+    this.renderSlide = this.renderSlide.bind(this)
+    this.createSlides = this.createSlides.bind(this)
+    this.goToSlide = this.goToSlide.bind(this)
+    this.goToPrevSlide = this.goToPrevSlide.bind(this)
+    this.goToNextSlide = this.goToNextSlide.bind(this)
 
     this.state = {
-      activeIndex: 0
+      activeIndex: 0,
+      slideData: [{name:test1}],
     };
   }
 
@@ -58,10 +58,19 @@ class Carousel extends Component {
     });
   }
 
+  renderSlide(index) {
+    let data = this.state.slideData[index]
+    return (
+        <section>
+          <h3>{data.name}</h3>
+        </section>
+      )
+  }
+
   render() {
     return (
       <div className="carousel">
-
+        {this.renderSlide(this.state.activeIndex)}
       </div>
     );
   }
